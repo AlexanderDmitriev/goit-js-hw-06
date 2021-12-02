@@ -6,22 +6,21 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-function createList(spacecrafts){
 
+function createList(elementsForLi){
   let listView = document.createElement('div');
   listView.classList.add('item');
 
-for(let i=0;i<spacecrafts.length;i++)
-{
+  for(let i=0;i<elementsForLi.length;i++)
+  {
     let listViewItem=document.createElement('li');
-    listViewItem.appendChild(document.createTextNode(spacecrafts[i]));
+    listViewItem.appendChild(document.createTextNode(elementsForLi[i]));
     listView.appendChild(listViewItem);
+  }
+
+  return listView;
 }
 
-return listView;
-}
-
-const a = document.querySelector('#ingredients');
-const x=createList(ingredients);
-a.append(x);
+const ingredientsList = document.querySelector('#ingredients');
+ingredientsList.append(createList(ingredients));
 
