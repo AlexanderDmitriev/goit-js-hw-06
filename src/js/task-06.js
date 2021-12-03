@@ -11,3 +11,16 @@
 
 Для добавления стилей, используй CSS-классы valid и invalid, которые мы уже добавили в исходные файлы задания. */
 
+const textInput = document.querySelector("#validation-input");
+function blurHandler(event) {
+    
+    if (event.currentTarget.value.trim().length === Number(textInput.dataset.length)) {
+        textInput.classList.add('valid');
+        textInput.classList.remove('invalid')
+    } else {
+        textInput.classList.add('invalid');
+        textInput.classList.remove('valid')
+    }
+}
+
+textInput.addEventListener('blur', blurHandler);
