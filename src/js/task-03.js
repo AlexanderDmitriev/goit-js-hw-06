@@ -18,7 +18,3 @@ const imageFromGallery = images.map(image => `<li> <img class="galleryForTask3__
 galleryList.insertAdjacentHTML('afterBegin', imageFromGallery);
 galleryList.classList.toggle("galleryForTask3");
 
-//const galleryListItem = document.querySelectorAll('.gallery>li>img');
-//galleryListItem.classList.toggle("galleryForTask3__item");
-//console.log(galleryListItem);
-//class="galleryForTask3__item"
