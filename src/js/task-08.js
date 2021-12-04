@@ -34,7 +34,7 @@ const result = {
 
 
 refs.submitButtonOnForm.addEventListener('submit',formSubmitHandler);
-console.log(refs.emailForm.currentTarget);
+console.log(refs.passwordForm);
 
 function formSubmitHandler (event) {
     event.preventDefault();
