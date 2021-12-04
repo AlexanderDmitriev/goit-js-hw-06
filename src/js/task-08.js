@@ -19,3 +19,29 @@
     Для доступа к элементам формы используй свойство elements.
 Выведи обьект с введенными данными в консоль и очисти значения полей формы методом reset.
  */
+
+const refs = {
+    emailForm: document.querySelector('.login-form label').firstElementChild,
+    passwordForm: document.querySelector('.login-form').children[1].firstElementChild,
+    submitButtonOnForm: document.querySelector('.login-form').lastElementChild
+}
+
+const result = {
+    email: "",
+    password : ""
+ };
+
+
+
+refs.submitButtonOnForm.addEventListener('submit',formSubmitHandler);
+console.log(refs.emailForm.currentTarget);
+
+function formSubmitHandler (event) {
+    event.preventDefault();
+    //console.log(event.currentTarget);
+    if ((refs.emailForm.currentTarget.value) && (refs.passwordForm.currentTarget.value)) {
+        result.email = refs.emailForm.currentTarget.value;
+        result.password = refs.passwordForm.currentTarget.value;
+     }
+    else window.alert("Все поля должны быть заполнены!");
+}
