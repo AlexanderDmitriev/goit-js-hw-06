@@ -34,29 +34,30 @@ const refs = {
 
 
 function numberHandler(event) {
-  console.log(refs.controlNumber.value);
-  boxAdding(refs.controlNumber.value);
   
+  boxAdding(refs.controlNumber.value);
 }
 
-function destroyHandler(event) {
-  refs.boxesDiv.children.innerHTML = '';
- }
 
 function boxAdding(elements) {
   let result;
+  const a = Number(refs.boxesDiv.children.length);
   
   for(let i=0;i<elements;i+=1)
   {
     result = document.createElement('div');
     result.classList.add('squeres');
-    result.style.width = `calc(30px + (${i * 10}px)`;
-    result.style.height = `calc(30px + (${i * 10}px)`;
+    result.style.width = `calc(30px + (${(i + a) * 10}px)`;
+    result.style.height = `calc(30px + (${(i + a) * 10}px)`;
     result.style.backgroundColor = getRandomHexColor();
     refs.boxesDiv.appendChild(result);
   }
   
 }
+
+function destroyHandler(event) {
+    
+ }
 
 
 
