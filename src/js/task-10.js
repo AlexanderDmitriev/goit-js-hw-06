@@ -56,7 +56,7 @@ function boxAdding(elements) {
 }
 
 function destroyHandler(event) {
-    
+  refs.boxesDiv.innerHTML = ' ';
  }
 
 
