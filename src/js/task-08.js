@@ -23,7 +23,8 @@
 const refs = {
     emailForm: document.querySelector('.login-form label').firstElementChild,
     passwordForm: document.querySelector('.login-form').children[1].firstElementChild,
-    submitButtonOnForm: document.querySelector('.login-form').lastElementChild
+    submitButtonOnForm: document.querySelector('.login-form').lastElementChild,
+    logInForm: document.querySelector('.login-form')
 }
 
 const result = {
@@ -32,16 +33,14 @@ const result = {
  };
 
 
+refs.logInForm.addEventListener('submit',formSubmitHandler);
 
-refs.submitButtonOnForm.addEventListener('submit',formSubmitHandler);
-console.log(refs.passwordForm);
 
-function formSubmitHandler (event) {
-    event.preventDefault();
-    //console.log(event.currentTarget);
-    if ((refs.emailForm.currentTarget.value) && (refs.passwordForm.currentTarget.value)) {
-        result.email = refs.emailForm.currentTarget.value;
-        result.password = refs.passwordForm.currentTarget.value;
+function formSubmitHandler(event) {
+  event.preventDefault();
+    if ((refs.emailForm.value) && (refs.passwordForm.value)) {
+        result.email = refs.emailForm.value;
+        result.password = refs.passwordForm.value;
      }
     else window.alert("Все поля должны быть заполнены!");
 }
