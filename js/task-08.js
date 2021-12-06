@@ -33,14 +33,18 @@ const result = {
  };
 
 
-refs.logInForm.addEventListener('submit',formSubmitHandler);
+refs.logInForm.addEventListener('submit', formSubmitHandler);
+
+
 
 
 function formSubmitHandler(event) {
   event.preventDefault();
-    if ((refs.emailForm.value) && (refs.passwordForm.value)) {
-        result.email = refs.emailForm.value;
-        result.password = refs.passwordForm.value;
-     }
-    else window.alert("Все поля должны быть заполнены!");
+  if ((refs.emailForm.value) && (refs.passwordForm.value)) {
+    result.email = refs.emailForm.value;
+    result.password = refs.passwordForm.value;
+  }
+  else { window.alert("Все поля должны быть заполнены!"); }
+  console.log(result);
+  refs.logInForm.reset();
 }
